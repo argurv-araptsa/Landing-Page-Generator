@@ -1,0 +1,1151 @@
+/* ==========================================================================
+   1. RESET & BASE STYLES
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   2. CONTROL PANEL (Φόρμα αριστερά)
+   ========================================================================== */
+.control-panel {
+    width: 350px;
+    background: #1e1e24;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.3);
+    z-index: 10;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+}
+
+/* ==========================================================================
+   3. PREVIEW PANEL (Δεξί panel)
+   ========================================================================== */
+.preview-panel {
+    flex: 1;
+    height: 100vh;
+    overflow-y: auto;
+    /* Επιτρέπει το scrolling στα εσωτερικά layouts */
+    position: relative;
+    background-color: #050505;
+    transition: all 0.5s ease;
+}
+
+/* ==========================================================================
+   4. SHOW / HIDE LOGIC
+   ========================================================================== */
+.custom-page {
+    display: none;
+    width: 100%;
+}
+
+/* Ενεργοποίηση σωστού display */
+[data-theme="restaurant"] .restaurant-layout {
+    display: flex;
+}
+
+[data-theme="service"] .service-layout {
+    display: block;
+    height: 100vh;
+}
+
+[data-theme="hotel"] .hotel-layout {
+    display: block;
+}
+
+/* ==========================================================================
+   5. THEMES CONFIGURATION
+   ========================================================================== */
+
+/* --- THEME: RESTAURANT --- */
+[data-theme="restaurant"] .restaurant-layout {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #5f5449;
+    color: #ffffff;
+    padding: 30px 50px 0 50px;
+    box-sizing: border-box;
+}
+
+/* 1. Navigation Bar */
+[data-theme="restaurant"] .rest-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+[data-theme="restaurant"] .rest-logo {
+    font-size: 24px;
+    font-family: 'Georgia', serif;
+}
+
+[data-theme="restaurant"] .rest-links {
+    display: flex;
+    gap: 25px;
+}
+
+[data-theme="restaurant"] .rest-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+[data-theme="restaurant"] .nav-story-btn {
+    background: transparent;
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    padding: 10px 24px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* 2. Hero Section */
+[data-theme="restaurant"] .rest-hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    height: calc(100vh - 120px);
+    margin-bottom: 100px;
+}
+
+[data-theme="restaurant"] .rest-col-left {
+    flex: 1.2;
+    max-width: 420px;
+}
+
+[data-theme="restaurant"] .rest-col-left .biz-title {
+    font-family: 'Georgia', serif;
+    font-size: 52px;
+    font-weight: normal;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+[data-theme="restaurant"] .rest-col-left .biz-description {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #e0e0e0;
+    margin-bottom: 30px;
+}
+
+[data-theme="restaurant"] .cta-btn {
+    background-color: #ea581e;
+    color: white;
+    padding: 14px 32px;
+    border: none;
+    border-radius: 25px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+[data-theme="restaurant"] .cta-btn:hover {
+    background-color: #d44716;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(234, 88, 30, 0.4);
+}
+
+[data-theme="restaurant"] .rest-col-middle {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+[data-theme="restaurant"] .oval-image-container {
+    width: 320px;
+    height: 460px;
+    border-radius: 160px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="restaurant"] .oval-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+[data-theme="restaurant"] .rest-col-right {
+    flex: 1;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+[data-theme="restaurant"] .quote-mark {
+    font-family: 'Georgia', serif;
+    font-size: 64px;
+    color: #ea581e;
+    line-height: 1;
+}
+
+[data-theme="restaurant"] .quote-text {
+    font-size: 14px;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+[data-theme="restaurant"] .chef-image-container {
+    width: 100%;
+    height: 180px;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+[data-theme="restaurant"] .chef-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* 3. ΜΕΝΟΥ ΣΕ ΚΑΡΤΕΛΕΣ */
+[data-theme="restaurant"] .rest-menu-section {
+    padding: 80px 0;
+}
+
+[data-theme="restaurant"] .section-title-wrapper {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+[data-theme="restaurant"] .section-title-wrapper h2 {
+    font-family: 'Georgia', serif;
+    font-size: 42px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+[data-theme="restaurant"] .section-title-wrapper p {
+    color: #a0b0a8;
+    font-size: 16px;
+}
+
+[data-theme="restaurant"] .menu-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+[data-theme="restaurant"] .menu-card {
+    background-color: #1f362a;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+[data-theme="restaurant"] .card-img-holder {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+}
+
+[data-theme="restaurant"] .card-img-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+[data-theme="restaurant"] .card-info {
+    padding: 25px;
+}
+
+[data-theme="restaurant"] .card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+[data-theme="restaurant"] .card-header h3 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+[data-theme="restaurant"] .card-price {
+    color: #ea581e;
+    font-weight: 700;
+    font-size: 18px;
+}
+
+[data-theme="restaurant"] .card-info p {
+    font-size: 14px;
+    color: #c0d0c8;
+    line-height: 1.5;
+}
+
+/* HOVER ΕΦΕ ΓΙΑ ΚΑΡΤΕΣ */
+[data-theme="restaurant"] .menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="restaurant"] .menu-card:hover .card-img-holder img {
+    transform: scale(1.08);
+}
+
+/*  4. ΠΟΙΟΙ ΕΙΜΑΣΤΕ */
+[data-theme="restaurant"] .rest-about-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 100px 0;
+}
+
+[data-theme="restaurant"] .about-oval-img {
+    width: 260px;
+    height: 400px;
+    border-radius: 130px;
+    overflow: hidden;
+    flex-shrink: 0;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+}
+
+[data-theme="restaurant"] .about-oval-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+[data-theme="restaurant"] .about-center-content {
+    text-align: center;
+    max-width: 500px;
+}
+
+[data-theme="restaurant"] .about-center-content .subtitle {
+    color: #ea581e;
+    font-size: 13px;
+    letter-spacing: 3px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 15px;
+}
+
+[data-theme="restaurant"] .about-center-content h2 {
+    font-family: 'Georgia', serif;
+    font-size: 38px;
+    font-weight: normal;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+[data-theme="restaurant"] .about-center-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #c0d0c8;
+    margin-bottom: 30px;
+}
+
+/*  5. FOOTER */
+[data-theme="restaurant"] .rest-footer {
+    background-color: #0f1f17;
+    /* Ακόμα πιο σκούρο πράσινο */
+    margin: 50px -50px 0 -50px;
+    /* Βγαίνει έξω από τα paddings για να πιάνει όλη την οθόνη */
+    padding: 60px 50px 20px 50px;
+    font-family: 'Georgia', serif;
+}
+
+[data-theme="restaurant"] .r-footer-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    max-width: 1200px;
+    margin: 0 auto 40px auto;
+}
+
+[data-theme="restaurant"] .r-footer-brand h2 {
+    font-size: 28px;
+    letter-spacing: 2px;
+    margin-bottom: 10px;
+}
+
+[data-theme="restaurant"] .r-footer-brand p {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    color: #8a9a92;
+}
+
+[data-theme="restaurant"] .r-footer-links {
+    display: flex;
+    gap: 80px;
+}
+
+[data-theme="restaurant"] .r-footer-col h4 {
+    font-size: 16px;
+    margin-bottom: 15px;
+    color: #ea581e;
+}
+
+[data-theme="restaurant"] .r-footer-col a,
+[data-theme="restaurant"] .r-footer-col p {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    color: #c0d0c8;
+    text-decoration: none;
+    margin-bottom: 10px;
+    display: block;
+}
+
+[data-theme="restaurant"] .r-footer-bottom .biz-title {
+    font-size: 15vw;
+    font-weight: 400;
+    text-align: center;
+    line-height: 0.8;
+    letter-spacing: -3px;
+    color: #ffffff;
+    opacity: 0.05;
+    /* Σχεδόν διάφανο για στυλ */
+    margin-top: 20px;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* ---  THEME: SERVICE --- */
+[data-theme="service"] .service-layout {
+    display: block;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #f4f7f6;
+    color: #1a1a1a;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 1. Navigation Bar */
+[data-theme="service"] .serv-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+    background-color: #1a2332;
+    color: #ffffff;
+}
+
+[data-theme="service"] .serv-logo {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+[data-theme="service"] .serv-links {
+    display: flex;
+    gap: 25px;
+}
+
+[data-theme="service"] .serv-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+/* Εφέ υπογράμμισης στα links του μενού */
+[data-theme="service"] .serv-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #2b44b6;
+    transition: width 0.3s ease;
+}
+
+[data-theme="service"] .serv-links a:hover::after {
+    width: 100%;
+}
+
+[data-theme="service"] .serv-links a:hover {
+    opacity: 1;
+}
+
+[data-theme="service"] .nav-template-btn {
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 8px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+[data-theme="service"] .nav-template-btn:hover {
+    background: #ffffff;
+    color: #1a2332;
+    transform: translateY(-2px);
+}
+
+/* 2. Hero Section */
+[data-theme="service"] .serv-hero-container {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('services imgs/services4.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 80px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    min-height: 550px;
+}
+
+[data-theme="service"] .serv-hero-text {
+    flex: 1;
+    max-width: 550px;
+    color: #ffffff;
+}
+
+[data-theme="service"] .serv-hero-text .biz-title {
+    font-size: 56px;
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+[data-theme="service"] .serv-hero-text .biz-description {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 30px;
+}
+
+[data-theme="service"] .serv-hero-badges {
+    display: flex;
+    gap: 15px;
+}
+
+[data-theme="service"] .badge-item {
+    background: rgba(0, 0, 0, 0.4);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+[data-theme="service"] .badge-item:hover {
+    background: rgba(43, 68, 182, 0.4);
+    border-color: #2b44b6;
+}
+
+/* ΦΟΡΜΑ (Hover Lift & Glow) */
+[data-theme="service"] .serv-hero-form {
+    background: #ffffff;
+    padding: 35px;
+    border-radius: 12px;
+    width: 380px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+[data-theme="service"] .serv-hero-form:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.25);
+}
+
+[data-theme="service"] .serv-hero-form h3 {
+    font-size: 20px;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: 600;
+}
+
+[data-theme="service"] .serv-hero-form input,
+[data-theme="service"] .serv-hero-form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #dddddd;
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+[data-theme="service"] .serv-hero-form input:focus,
+[data-theme="service"] .serv-hero-form select:focus {
+    border-color: #2b44b6;
+    box-shadow: 0 0 0 3px rgba(43, 68, 182, 0.15);
+    outline: none;
+}
+
+[data-theme="service"] .form-submit-btn {
+    width: 100%;
+    background-color: #2b44b6;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 6px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+[data-theme="service"] .form-submit-btn:hover {
+    background-color: #1e3294;
+    box-shadow: 0 5px 15px rgba(43, 68, 182, 0.4);
+}
+
+/* 3. Μπάρα Αξιολογήσεων */
+[data-theme="service"] .serv-ratings-bar {
+    background-color: #2b44b6;
+    color: white;
+    padding: 25px 60px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+[data-theme="service"] .ratings-lead {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+[data-theme="service"] .stars-grid {
+    display: flex;
+    gap: 30px;
+}
+
+[data-theme="service"] .star-col {
+    font-size: 14px;
+    font-weight: 500;
+    transition: transform 0.3s ease;
+    cursor: default;
+}
+
+[data-theme="service"] .star-col:hover {
+    transform: scale(1.08);
+}
+
+/* 4. Professional Services Grid Section */
+[data-theme="service"] .serv-features-section {
+    padding: 80px 60px;
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    background-color: #ffffff;
+}
+
+[data-theme="service"] .features-images-grid {
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+}
+
+/* ΕΦΕ ΕΙΚΟΝΕΣ (Smooth Zoom & Overlay Shift) */
+[data-theme="service"] .feat-img {
+    height: 180px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="service"] .feat-img.img-wide {
+    grid-column: span 2;
+    height: 240px;
+}
+
+[data-theme="service"] .feat-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+[data-theme="service"] .feat-img:hover img {
+    transform: scale(1.06);
+}
+
+[data-theme="service"] .features-text-content {
+    flex: 1;
+}
+
+[data-theme="service"] .features-text-content h2 {
+    font-size: 38px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 20px;
+}
+
+[data-theme="service"] .features-text-content p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: #555555;
+    margin-bottom: 30px;
+}
+
+[data-theme="service"] .stats-boxes-holder {
+    display: flex;
+    gap: 30px;
+}
+
+/* ΕΦΕ ΣΤΑ STAT BOXES */
+[data-theme="service"] .stat-box {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px 15px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+[data-theme="service"] .stat-box:hover {
+    background-color: #f4f7f6;
+    transform: translateX(5px);
+}
+
+[data-theme="service"] .stat-icon {
+    background: #eef1fc;
+    color: #2b44b6;
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: all 0.3s ease;
+}
+
+[data-theme="service"] .stat-box:hover .stat-icon {
+    background: #2b44b6;
+    color: #ffffff;
+    transform: rotate(360deg);
+}
+
+[data-theme="service"] .stat-info h4 {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+[data-theme="service"] .stat-info p {
+    margin: 0;
+    font-size: 13px;
+    color: #777777;
+}
+
+/* 5. How It Works Section (FAQ / Accordion) */
+[data-theme="service"] .serv-workflow-section {
+    padding: 80px 60px;
+    background-color: #eef2f5;
+}
+
+[data-theme="service"] .serv-workflow-section h2 {
+    text-align: center;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 50px;
+}
+
+[data-theme="service"] .workflow-split-container {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+[data-theme="service"] .accordion-holder {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* ΕΦΕ ΣΤΑ ACCORDIONS */
+[data-theme="service"] .accordion-item {
+    background: #ffffff;
+    border-radius: 8px;
+    padding: 18px 24px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    border: 1px solid transparent;
+    transition: all 0.3s ease;
+}
+
+[data-theme="service"] .accordion-item:hover {
+    border-color: rgba(43, 68, 182, 0.3);
+    background-color: #fafbfc;
+}
+
+[data-theme="service"] .accordion-item.active {
+    border-color: #1a1a1a;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+[data-theme="service"] .accordion-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+[data-theme="service"] .accordion-body {
+    margin-top: 15px;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #555555;
+    border-top: 1px solid #eeeeee;
+    padding-top: 15px;
+}
+
+[data-theme="service"] .workflow-image-holder {
+    flex: 1;
+    height: 380px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="service"] .workflow-image-holder img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+[data-theme="service"] .workflow-image-holder:hover img {
+    transform: scale(1.04);
+}
+
+/* 6. Clean Business Footer */
+[data-theme="service"] .serv-footer {
+    background-color: #1a2332;
+    color: #ffffff;
+    padding: 40px 60px 20px 60px;
+}
+
+[data-theme="service"] .s-footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 30px;
+    margin-bottom: 20px;
+}
+
+[data-theme="service"] .s-footer-brand h3 {
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+[data-theme="service"] .s-footer-brand p {
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+[data-theme="service"] .s-footer-row-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    margin-left: 25px;
+    opacity: 0.8;
+    transition: all 0.2s ease;
+}
+
+[data-theme="service"] .s-footer-row-links a:hover {
+    opacity: 1;
+    color: #2b44b6;
+}
+
+[data-theme="service"] .s-footer-copyright {
+    text-align: center;
+    font-size: 13px;
+    opacity: 0.5;
+}
+
+/* --- THEME: HOTEL (Boutique Luxury Style) --- */
+[data-theme="hotel"] .hotel-layout {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    background-color: #f4f4f4;
+}
+
+/* PARALLAX EFFECT*/
+[data-theme="hotel"] .hotel-hero {
+    background-image: url('hotel imgs/hotel-hero-section.jpg');
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 30px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+/* Navigation & Meta */
+[data-theme="hotel"] .hotel-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    z-index: 5;
+    padding: 10px 0;
+}
+
+[data-theme="hotel"] .hotel-logo {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+[data-theme="hotel"] .hotel-menu-btn {
+    background: rgba(255, 255, 255, 0.9);
+    color: #000000;
+    padding: 8px 16px;
+    border-radius: 30px;
+    font-size: 13px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+}
+
+[data-theme="hotel"] .menu-dot {
+    width: 6px;
+    height: 6px;
+    background-color: #000000;
+    border-radius: 50%;
+}
+
+[data-theme="hotel"] .hotel-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 100%;
+    margin-bottom: -10px;
+}
+
+[data-theme="hotel"] .hotel-meta .biz-description {
+    font-size: 14px;
+    font-weight: 500;
+    max-width: 300px;
+    line-height: 1.4;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="hotel"] .hotel-tagline {
+    font-size: 14px;
+    font-weight: 600;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme="hotel"] .hotel-hero .biz-title {
+    font-family: 'Georgia', serif;
+    font-size: 12vw;
+    font-weight: 400;
+    text-align: center;
+    line-height: 0.85;
+    letter-spacing: -2px;
+    width: 100%;
+    margin-top: 10px;
+    text-shadow: 2px 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/*  WINE & DINE */
+[data-theme="hotel"] .hotel-wine-dine {
+    background-color: #f4f4f4;
+    color: #1a1a1a;
+    padding: 100px 40px;
+    width: 100%;
+    font-family: 'Georgia', serif;
+
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="hotel"] .wd-header {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 60px auto;
+}
+
+[data-theme="hotel"] .wd-header h2 {
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+[data-theme="hotel"] .wd-header p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #4a4a4a;
+}
+
+[data-theme="hotel"] .wd-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+[data-theme="hotel"] .wd-card {
+    height: 550px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    padding: 30px;
+    transition: transform 0.4s ease;
+}
+
+[data-theme="hotel"] .wd-card:hover {
+    transform: scale(1.01);
+}
+
+[data-theme="hotel"] .card-bar {
+    background-image: url('hotel imgs/hotel-drinks.jpg');
+}
+
+[data-theme="hotel"] .card-restaurant {
+    background-image: url('hotel imgs/hotel-food.jpg');
+}
+
+[data-theme="hotel"] .wd-card-content {
+    color: #ffffff;
+    z-index: 2;
+    text-shadow: 1px 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+[data-theme="hotel"] .wd-card-content h3 {
+    font-size: 20px;
+    font-weight: 400;
+    letter-spacing: 2px;
+    margin-bottom: 5px;
+}
+
+[data-theme="hotel"] .wd-card-content p {
+    font-size: 14px;
+    font-style: italic;
+    opacity: 0.9;
+}
+
+/* FOOTER */
+[data-theme="hotel"] .hotel-footer {
+    background-color: #143224;
+    color: #ffffff;
+    padding: 80px 40px 20px 40px;
+    position: relative;
+    z-index: 3;
+    font-family: 'Georgia', serif;
+}
+
+[data-theme="hotel"] .footer-top {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto 60px auto;
+}
+
+[data-theme="hotel"] .footer-statement {
+    flex: 1;
+    max-width: 450px;
+}
+
+[data-theme="hotel"] .footer-statement p {
+    font-size: 22px;
+    line-height: 1.5;
+    letter-spacing: 1px;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+[data-theme="hotel"] .footer-links-grid {
+    display: flex;
+    gap: 60px;
+}
+
+[data-theme="hotel"] .footer-column {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+[data-theme="hotel"] .footer-column a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 14px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+[data-theme="hotel"] .footer-column a:hover {
+    opacity: 1;
+}
+
+[data-theme="hotel"] .contact-info p {
+    font-size: 14px;
+    opacity: 0.8;
+    margin-bottom: 4px;
+}
+
+/* Kείμενο στο κάτω μέρος του footer */
+[data-theme="hotel"] .footer-bottom .biz-title {
+    font-size: 14vw;
+    font-weight: 400;
+    text-align: center;
+    line-height: 0.8;
+    letter-spacing: -3px;
+    color: #ffffff;
+    opacity: 1;
+    margin-top: 40px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 20px;
+}

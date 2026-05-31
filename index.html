@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Landing Page Generator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <aside class="control-panel">
+            <h2>Ρυθμίσεις Σελίδας</h2>
+            <form id="generator-form">
+                <div class="form-group">
+                    <label for="biz-name">Όνομα Επιχείρησης:</label>
+                    <input type="text" id="biz-name" placeholder="π.χ. Burger House">
+                </div>
+
+                <div class="form-group">
+                    <label for="biz-type">Τύπος Επιχείρησης:</label>
+                    <select id="biz-type">
+                        <option value="restaurant">Εστιατόριο</option>
+                        <option value="service">Υπηρεσίες</option>
+                        <option value="hotel">Ξενοδοχείο</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="biz-desc">Περιγραφή:</label>
+                    <textarea id="biz-desc" placeholder="Γράψε δύο λόγια για την επιχείρηση..."></textarea>
+                </div>
+            </form>
+        </aside>
+
+        <main class="preview-panel" id="preview-section" data-theme="restaurant">
+
+            <!-- SITE 1: RESTAURANT -->
+            <div class="custom-page restaurant-layout">
+                <!-- 1. NAVIGATION BAR -->
+                <header class="rest-nav">
+                    <div class="rest-logo">
+                        <span class="logo-icon"></span> Craving
+                    </div>
+                    <nav class="rest-links">
+                        <a href="#">All Pages ▾</a>
+                        <a href="#">About Us</a>
+                        <a href="#">Menu</a>
+                        <a href="#">Blog</a>
+                    </nav>
+                    <button class="nav-story-btn">About Our Story</button>
+                </header>
+            
+                <!-- 2. MAIN HERO CONTENT (3 Στήλες) -->
+                <div class="rest-hero-container">
+                    <div class="rest-col-left">
+                        <h1 class="biz-title">Make a Moment with Craving</h1>
+                        <p class="biz-description">Embark on a gastronomic journey with Craving. Our curated selection of
+                            international flavors will tantalize your taste transport.</p>
+                        <button class="cta-btn">Book a Moment</button>
+                    </div>
+            
+                    <div class="rest-col-middle">
+                        <div class="oval-image-container">
+                            <img src="restaurant imgs/main-food.jpg"
+                                alt="Delicious Food">
+                        </div>
+                    </div>
+            
+                    <div class="rest-col-right">
+                        <div class="testimonial-box">
+                            <span class="quote-mark">“</span>
+                            <p class="quote-text">“I've been coming to Craving for years, and I've never been disapply pointed. The
+                                food is always fresh and flavorful, and the service.</p>
+                        </div>
+                        <div class="chef-image-container">
+                            <img src="restaurant imgs/chef.jpg"
+                                alt="Our Chef">
+                        </div>
+                    </div>
+                </div>
+            
+                <!-- 3. ΝΕΟ SECTION: ΜΕΝΟΥ ΣΕ ΚΑΡΤΕΛΕΣ -->
+                <section class="rest-menu-section">
+                    <div class="section-title-wrapper">
+                        <h2>Our Signature Dishes</h2>
+                        <p>A handpicked selection of our guest favorites</p>
+                    </div>
+            
+                    <div class="menu-cards-grid">
+                        <!-- Κάρτα 1 -->
+                        <div class="menu-card">
+                            <div class="card-img-holder">
+                                <img src="restaurant imgs/food1.jpg"
+                                    alt="Menu Item">
+                            </div>
+                            <div class="card-info">
+                                <div class="card-header">
+                                    <h3>Smash Burger Ultra</h3>
+                                    <span class="card-price">$14.50</span>
+                                </div>
+                                <p>Double dry-aged beef patty, cheddar, secret craving sauce, brioche bun.</p>
+                            </div>
+                        </div>
+            
+                        <!-- Κάρτα 2 -->
+                        <div class="menu-card">
+                            <div class="card-img-holder">
+                                <img src="restaurant imgs/food2.jpg"
+                                    alt="Menu Item">
+                            </div>
+                            <div class="card-info">
+                                <div class="card-header">
+                                    <h3>Craving Salmon Salad</h3>
+                                    <span class="card-price">$18.00</span>
+                                </div>
+                                <p>Fresh Atlantic salmon, organic greens, avocado, citrus dressing.</p>
+                            </div>
+                        </div>
+            
+                        <!-- Κάρτα 3 -->
+                        <div class="menu-card">
+                            <div class="card-img-holder">
+                                <img src="restaurant imgs/food3.jpg"
+                                    alt="Menu Item">
+                            </div>
+                            <div class="card-info">
+                                <div class="card-header">
+                                    <h3>Truffle Fusion Pizza</h3>
+                                    <span class="card-price">$21.00</span>
+                                </div>
+                                <p>Wild mushrooms, fresh black truffle, mozzarella, extra virgin olive oil.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <!-- 4. ΝΕΟ SECTION: ΠΟΙΟΙ ΕΙΜΑΣΤΕ -->
+                <section class="rest-about-section">
+                    <!-- Αριστερή Οβάλ Εικόνα -->
+                    <div class="about-oval-img img-left">
+                        <img src="restaurant imgs/restaurant-interior.jpg"
+                            alt="Restaurant Interior">
+                    </div>
+            
+                    <!-- Κεντρικό Κείμενο -->
+                    <div class="about-center-content">
+                        <span class="subtitle">OUR STORY</span>
+                        <h2>Crafting Culinary Memories Since 2018</h2>
+                        <p>We believe that food is an art form and a way to bring people together. Every ingredient is locally
+                            sourced, and every recipe is crafted with passion and precision to give you an unforgettable experience.
+                        </p>
+                        <button class="cta-btn">Discover Our Kitchen</button>
+                    </div>
+            
+                    <!-- Δεξιά Οβάλ Εικόνα -->
+                    <div class="about-oval-img img-right">
+                        <img src="restaurant imgs/chef.jpg"
+                            alt="Chef Cooking">
+                    </div>
+                </section>
+            
+                <!-- 5. ΝΕΟ SECTION: RESTAURANT FOOTER -->
+                <footer class="rest-footer">
+                    <div class="r-footer-top">
+                        <div class="r-footer-brand">
+                            <h2>CRAVING</h2>
+                            <p>Flavors that linger, moments that stay.</p>
+                        </div>
+                        <div class="r-footer-links">
+                            <div class="r-footer-col">
+                                <h4>Explore</h4>
+                                <a href="#">Menu</a>
+                                <a href="#">Our Story</a>
+                                <a href="#">Reservations</a>
+                            </div>
+                            <div class="r-footer-col">
+                                <h4>Contact</h4>
+                                <p>+30 210 1234567</p>
+                                <p>hello@craving.com</p>
+                                <p>Foodies Street 12, Athens</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="r-footer-bottom">
+                        <h1 class="biz-title">CRAVING</h1>
+                    </div>
+                </footer>
+            
+            </div>
+
+            <div class="custom-page service-layout">
+            
+                <header class="serv-nav">
+                    <div class="serv-logo">
+                        <span></span> Handyman
+                    </div>
+                    <nav class="serv-links">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Blog</a>
+                        <a href="#">Services</a>
+                        <a href="#">Contact</a>
+                    </nav>
+                    <button class="nav-template-btn">Get template</button>
+                </header>
+            
+                <div class="serv-hero-container">
+                    <div class="serv-hero-text">
+                        <h1 class="biz-title">Your Partner For Home Repairs</h1>
+                        <p class="biz-description">Your go-to partner for all your home improvement needs.</p>
+            
+                        <div class="serv-hero-badges">
+                            <span class="badge-item"> (959) 555-0123</span>
+                            <span class="badge-item"> Available 24/7</span>
+                        </div>
+                    </div>
+            
+                    <div class="serv-hero-form">
+                        <h3>Request Your Free Call</h3>
+                        <form onsubmit="event.preventDefault();">
+                            <input type="text" placeholder="Name">
+                            <input type="email" placeholder="Email">
+                            <input type="text" placeholder="Number">
+                            <select>
+                                <option>Select your service...</option>
+                                <option>Plumbing</option>
+                                <option>Electrical</option>
+                                <option>General Repairs</option>
+                            </select>
+                            <button type="submit" class="form-submit-btn">Request Call</button>
+                        </form>
+                    </div>
+                </div>
+            
+                <div class="serv-ratings-bar">
+                    <p class="ratings-lead">Our company is a top-rated service provider</p>
+                    <div class="stars-grid">
+                        <div class="star-col">⭐ 4.6 on Trustpilot</div>
+                        <div class="star-col">⭐ 4.85 on Yelp</div>
+                        <div class="star-col">⭐ 4.9 on Google</div>
+                    </div>
+                </div>
+            
+                <section class="serv-features-section">
+                    <div class="features-images-grid">
+                        <div class="feat-img img-wide">
+                            <img src="services imgs/services2.jpg"
+                                alt="Renovation">
+                        </div>
+                        <div class="feat-img">
+                            <img src="services imgs/services1.jpg"
+                                alt="Worker">
+                        </div>
+                        <div class="feat-img">
+                            <img src="services imgs/services-hero.jpg"
+                                alt="Tools">
+                        </div>
+                    </div>
+            
+                    <div class="features-text-content">
+                        <h2>Get Professional Handyman Services</h2>
+                        <p>Our team of skilled and dedicated handymen is ready to tackle any project, big or small, to enhance the
+                            comfort and functionality of your living spaces. From fixing a leaky faucet to remodeling your entire
+                            kitchen, you're covered.</p>
+            
+                        <div class="stats-boxes-holder">
+                            <div class="stat-box">
+                                <div class="stat-icon">📅</div>
+                                <div class="stat-info">
+                                    <h4>24/7</h4>
+                                    <p>availability</p>
+                                </div>
+                            </div>
+                            <div class="stat-box">
+                                <div class="stat-icon">🕒</div>
+                                <div class="stat-info">
+                                    <h4>5 hours</h4>
+                                    <p>response time</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            
+                <section class="serv-workflow-section">
+                    <h2>How Does It Work?</h2>
+            
+                    <div class="workflow-split-container">
+                        <div class="accordion-holder">
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>Do you offer warranties on your work?</span>
+                                    <span>▲</span>
+                                </div>
+                            </div>
+                            <div class="accordion-item">
+                                <div class="accordion-header">
+                                    <span>Can I schedule services for weekends?</span>
+                                    <span>▲</span>
+                                </div>
+                            </div>
+                            <div class="accordion-item active">
+                                <div class="accordion-header">
+                                    <span>Are your handymen licensed?</span>
+                                    <span>▼</span>
+                                </div>
+                                <div class="accordion-body">
+                                    <p>Yes, all our handymen are licensed and insured professionals with extensive experience in
+                                        their respective fields. You can trust that your home is in capable hands.</p>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="workflow-image-holder">
+                            <img src="services imgs/services3.jpg"
+                                alt="Modern Kitchen">
+                        </div>
+                    </div>
+                </section>
+            
+                <footer class="serv-footer">
+                    <div class="s-footer-content">
+                        <div class="s-footer-brand">
+                            <h3>🏠 Handyman</h3>
+                            <p>Your trusted home improvement companion.</p>
+                        </div>
+                        <div class="s-footer-row-links">
+                            <a href="#">Privacy Policy</a>
+                            <a href="#">Terms of Service</a>
+                            <a href="#">Contact Us</a>
+                        </div>
+                    </div>
+                    <div class="s-footer-copyright">
+                        <p>&copy; 2026 Handyman. All rights reserved.</p>
+                    </div>
+                </footer>
+            
+            </div>
+
+            <div class="custom-page hotel-layout">
+                <nav class="hotel-nav">
+                    <div class="hotel-logo">HOTELL</div>
+                    <div class="hotel-menu-btn">
+                        <span class="menu-dot"></span>
+                        <span class="menu-text">Menu</span>
+                    </div>
+                </nav>
+
+                <div class="hotel-hero">
+                    <div class="hotel-meta">
+                        <p class="biz-description">A boutique hotel designed for slow living</p>
+                        <p class="hotel-tagline">Life, Unhurried</p>
+                    </div>
+                    <h1 class="biz-title">HOTELL</h1>
+                </div>
+
+                <div class="hotel-wine-dine">
+                    <div class="wd-header">
+                        <h2>WINE & DINE</h2>
+                        <p>Whether you're settling into Ember for an evening cocktail or sitting down to a full dinner
+                            at Grove & Grain, every visit is an occasion worth savouring.</p>
+                    </div>
+
+                    <div class="wd-grid">
+                        <div class="wd-card card-bar">
+                            <div class="wd-card-content">
+                                <h3>BAR MENU</h3>
+                                <p>Ember</p>
+                            </div>
+                        </div>
+
+                        <div class="wd-card card-restaurant">
+                            <div class="wd-card-content">
+                                <h3>RESTAURANT MENU</h3>
+                                <p>Grove & Grain</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <footer class="hotel-footer">
+                    <div class="footer-top">
+                        <div class="footer-statement">
+                            <p>THOUGHTFULLY CRAFTED SPACES WHERE EVERY DETAIL INVITES YOU TO SLOW DOWN AND STAY A LITTLE LONGER.</p>
+                        </div>
+                
+                        <div class="footer-links-grid">
+                            <div class="footer-column">
+                                <a href="#">Home</a>
+                                <a href="#">Rooms</a>
+                                <a href="#">Wine & Dine</a>
+                                <a href="#">Gallery</a>
+                                <a href="#">Reserve</a>
+                            </div>
+                            <div class="footer-column">
+                                <a href="#">Privacy Policy</a>
+                                <a href="#">Terms & Conditions</a>
+                                <a href="#">404</a>
+                            </div>
+                            <div class="footer-column contact-info">
+                                <p>022 5259-5200</p>
+                                <p>welcome@hotellia.com</p>
+                                <p>Follow us on Facebook</p>
+                                <p>our Instagram</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="footer-bottom">
+                        <h1 class="biz-title">HOTELL</h1>
+                    </div>
+                </footer>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
