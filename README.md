@@ -35,14 +35,6 @@ This project showcases production-level front-end development patterns:
 * **Dynamic Stylesheet Scraping:** Programmatic collection of active CSS rules to compile a self-contained, standalone file during export.
 
 ---
-##  Author
-Argyro Araptsa
-
-Junior WordPress & Front-End Developer
-
-Portfolio: https://argiro-portfolio.netlify.app/ 
-
-
 
 ##  Project Structure
 
@@ -61,5 +53,13 @@ Portfolio: https://argiro-portfolio.netlify.app/
 [ ] More Layout Variety: Expanding the library with E-commerce, Portfolio, and SaaS templates.
 
 [ ] Headless CMS Deployment: A seamless "one-click publish" integration.
+```
 
+
+##  Author
+Argyro Araptsa
+
+Junior WordPress & Front-End Developer
+
+Portfolio: https://argiro-portfolio.netlify.app/ 
 
